@@ -19,8 +19,6 @@ class ReviewsCarousel extends Component {
     const {s} = this.state
     if (s < 3) {
       this.setState(prevState => ({s: prevState.s + 1}))
-    } else {
-      this.setState({s: 0})
     }
   }
 
@@ -38,7 +36,7 @@ class ReviewsCarousel extends Component {
           <div>
             <button
               type="button"
-              testid="leftArrow"
+              //   testid="leftArrow"
               className="button"
               onClick={this.onLeftArrow}
             >
@@ -62,7 +60,7 @@ class ReviewsCarousel extends Component {
             <button
               type="button"
               className="button"
-               testid="rightArrow"
+              //    testid="rightArrow"
               onClick={this.onRightArrow}
             >
               <img
