@@ -7,18 +7,29 @@ class ReviewsCarousel extends Component {
   state = {s: 0}
 
   onLeftArrow = () => {
-    this.setState(prevState => ({s: prevState.s - 1}))
+    console.log('left arrow clicked')
+    const {s} = this.state
+    if (s > 0) {
+      this.setState(prevState => ({s: prevState.s - 1}))
+    }
   }
 
   onRightArrow = () => {
-    this.setState(prevState => ({s: prevState.s + 1}))
+    console.log('right arrow clicked')
+    const {s} = this.state
+    if (s < 3) {
+      this.setState(prevState => ({s: prevState.s + 1}))
+    } else {
+      this.setState({s: 0})
+    }
   }
 
   render() {
     const {reviewsList} = this.props
     const {s} = this.state
+    console.log(s)
 
-    let testid
+    // let testid
 
     return (
       <div className="reviewContainer">
@@ -51,7 +62,7 @@ class ReviewsCarousel extends Component {
             <button
               type="button"
               className="button"
-              testid="rightArrow"
+               testid="rightArrow"
               onClick={this.onRightArrow}
             >
               <img
